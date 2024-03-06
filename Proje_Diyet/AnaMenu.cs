@@ -70,7 +70,7 @@ namespace Proje_Diyet
                     }
                 }
 
-                using (SQLiteCommand cmd3 = new SQLiteCommand("select ETIKETAD, COUNT(*)  from TBLETIKET GROUP BY ETIKETAD", conn))
+                using (SQLiteCommand cmd3 = new SQLiteCommand("select ETIKETAD, COUNT(*) FROM TBLWP LEFT JOIN TBLETIKET ON ETIKET = ETIKETID GROUP BY ETIKETAD", conn))
                 {
                     using (SQLiteDataReader dr2 = cmd3.ExecuteReader())
                     {

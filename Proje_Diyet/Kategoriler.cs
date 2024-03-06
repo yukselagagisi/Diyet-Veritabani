@@ -38,8 +38,8 @@ namespace Proje_Diyet
 
         private bool BosMu() 
         {
-            return (KategoriIDTxt.Text.Length == 0 && 
-                    KategoriIsimTxt.Text.Length == 0);
+            return ((KategoriIDTxt.Text.Length == 0 && 
+                    KategoriIsimTxt.Text.Length == 0) || string.IsNullOrWhiteSpace(KategoriIDTxt.Text));
         }
 
         private void Kategoriler_Load(object sender, EventArgs e)
@@ -76,6 +76,8 @@ namespace Proje_Diyet
 
         private void GuncelleBtn_Click(object sender, EventArgs e)
         {
+            if (BosMu()) return;
+
             using(SQLiteConnection conn = new SQLiteConnection(Sorgular.connectionString)) 
             {
                 conn.Open();

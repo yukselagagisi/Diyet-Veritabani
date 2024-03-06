@@ -38,8 +38,8 @@ namespace Proje_Diyet
 
         private bool BosMu() 
         {
-            return (EtiketIDTxt.Text.Length == 0 &&
-                EtiketAdTxt.Text.Length == 0);
+            return ((EtiketIDTxt.Text.Length == 0 &&
+                EtiketAdTxt.Text.Length == 0) || string.IsNullOrWhiteSpace(EtiketIDTxt.Text));
         }
 
         private void Etiketler_Load(object sender, EventArgs e)
@@ -71,6 +71,7 @@ namespace Proje_Diyet
         {
 
             if (BosMu()) return;
+
 
             using (SQLiteConnection conn = new SQLiteConnection(Sorgular.connectionString)) 
             {
