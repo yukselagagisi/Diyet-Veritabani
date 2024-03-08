@@ -38,8 +38,8 @@ namespace Proje_Diyet
 
         private bool BosMu() 
         {
-            return ((KategoriIDTxt.Text.Length == 0 && 
-                    KategoriIsimTxt.Text.Length == 0) || string.IsNullOrWhiteSpace(KategoriIDTxt.Text));
+            return (string.IsNullOrWhiteSpace(KategoriIDTxt.Text) && 
+                    string.IsNullOrWhiteSpace(KategoriIsimTxt.Text));
         }
 
         private void Kategoriler_Load(object sender, EventArgs e)
