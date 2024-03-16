@@ -193,7 +193,7 @@ namespace Proje_Diyet
 
         private void CikisBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void YenileBtn_Click(object sender, EventArgs e)
